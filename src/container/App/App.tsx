@@ -1,24 +1,24 @@
-import CssBaseline from "@mui/material/CssBaseline";
-import { StyledEngineProvider } from "@mui/material/styles";
-import { Route, Routes } from "react-router-dom";
-import Cart from "../../pages/Cart/Cart";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import Main from "../Main/Main";
+import CssBaseline from '@mui/material/CssBaseline'
+import { StyledEngineProvider } from '@mui/material/styles'
+import { Route, Routes } from 'react-router-dom'
+import Cart from '../../pages/Cart/Cart'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
+import Main from '../Main/Main'
 
-type Props = {};
+type Props = {}
 const App = (props: Props) => {
-  return (
-    <StyledEngineProvider injectFirst>
-      <CssBaseline />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
+    return (
+        <StyledEngineProvider injectFirst>
+            <CssBaseline />
+            <Header />
+            <Routes>
+                <Route path="/" element={<Main />}></Route>
 
-        <Route path="/cart" element={<Cart />}></Route>
-      </Routes>
-      <Footer />
-    </StyledEngineProvider>
-  );
-};
-export default App;
+                <Route path="/cart" element={<Cart />}></Route>
+            </Routes>
+            <Footer />
+        </StyledEngineProvider>
+    )
+}
+export default App
