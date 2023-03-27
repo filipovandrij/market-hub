@@ -1,35 +1,82 @@
 import './ProductCard.scss'
-
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import { useState } from 'react'
+import { TextField } from '@mui/material'
 
-type Props = {}
-const ProductCard = (props: Props) => {
+type Props = {
+    id: number
+    title: string
+    author: string
+    description: string
+    price: number
+    image: string
+    rating: number
+    stock: number
+    category: string
+}
+const ProductCard = ({
+    id,
+    title,
+    author,
+    description,
+    price,
+    image,
+    rating,
+    stock,
+    category,
+}: Props) => {
+    const [count, setCount] = useState<number>(1)
+
+    const onIncrement = () => {
+        setCount((prevState) => prevState + 1)
+    }
+
+    const onDecrement = () => {
+        setCount((prevState) => prevState - 1)
+    }
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card key={id} className="product-card" sx={{ maxWidth: 330 }}>
             <CardMedia
-                sx={{ height: 140 }}
-                image="/static/images/cards/contemplative-reptile.jpg"
-                title="green iguana"
+                sx={{ height: 200, width: 100 }}
+                image={image}
+                title="фото 5"
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    {title} / {author}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
+                    {description}
                 </Typography>
+                <Typography>Price:{price}</Typography>
+                <Typography>Rating:{rating}</Typography>
+                <Typography>Categoty:{category}</Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+                <Button
+                    variant="outlined"
+                    onClick={() => onDecrement()}
+                    disabled={count <= 0}
+                >
+                    -
+                </Button>
+                <TextField className="count-field" size="small" value={count} />
+                <Button
+                    variant="outlined"
+                    onClick={() => onIncrement()}
+                    disabled={count >= stock}
+                >
+                    +
+                </Button>
             </CardActions>
+            <Button size="small" variant="contained">
+                Add to Cart( осталось{stock})
+            </Button>
         </Card>
     )
 }

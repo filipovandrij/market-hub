@@ -1,16 +1,9 @@
-import { Container } from '@mui/material'
-import ProductCard from '../../component/ProductCard/ProductCard'
+import './Cart.scss'
 
 type Props = {}
 
 const Cart = (props: Props) => {
-    return (
-        <div className="container-cards">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-        </div>
-    )
+    return <div className="container-cards"></div>
 }
 
 export default Cart

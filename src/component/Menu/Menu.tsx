@@ -53,6 +53,7 @@ const Menu = (props: Props) => {
     return (
         <div className="row">
             <Link to="/cart"> Categories</Link>
+            <Link to="/newProduct"> Add Product</Link>
             <Link to="/cart"> News</Link>
             <div>
                 <Search>

@@ -1,5 +1,11 @@
+import AddProduct from '../../component/AddProduct/AddProduct'
+
 type Props = {}
 const CreateProduct = (props: Props) => {
-    return <div>CreateProduct</div>
+    return (
+        <>
+            <AddProduct />
+        </>
+    )
 }
 export default CreateProduct
