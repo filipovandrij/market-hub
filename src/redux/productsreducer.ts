@@ -2,9 +2,17 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Product } from "utils/productsArray";
 
 
+type Product = {
+    id: number
+    title: string
+    description: string
+    type: string
+    capacity: string
+    price: number
+    image: string
+}
 
 const initialState:Product[] = []
 

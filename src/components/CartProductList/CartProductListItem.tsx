@@ -1,4 +1,4 @@
-import { Product } from 'utils/productsArray'
+import { Product } from 'utils/FunctionalAndType'
 
 type Props = {
     product: Product

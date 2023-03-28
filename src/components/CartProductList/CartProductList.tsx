@@ -1,6 +1,15 @@
 import { useAppSelector } from 'redux/hooks'
-import { getProductsObject, Product } from 'utils/productsArray'
 import CartProductListItem from './CartProductListItem'
+
+type Product = {
+    id: number
+    title: string
+    description: string
+    type: string
+    capacity: string
+    price: number
+    image: string
+}
 
 type ProductsObject = {
     [id: number]: Product
@@ -18,6 +27,15 @@ const CartProductList = ({
     CartItem = CartProductListItem,
 }: Props) => {
     const productsArray = useAppSelector((state) => state.products)
+
+    const getProductsObject = (productsArray: Product[]) =>
+        productsArray.reduce(
+            (object, product) => ({
+                ...object,
+                [product.id]: product,
+            }),
+            {}
+        )
 
     const productsObject: ProductsObject = getProductsObject(productsArray)
     return (

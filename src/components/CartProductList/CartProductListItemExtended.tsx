@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, Grid } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
-import { Product } from 'utils/productsArray'
+import { Product } from 'utils/FunctionalAndType'
 import Quantity from 'components/Quantity/Quantity'
 import { useAppDispatch } from 'redux/hooks'
 import { changeProductQuantity, removeProductFromCart } from 'redux/cartReducer'
