@@ -1,3 +1,4 @@
+import { Button } from '@mui/material'
 import MenuItem from './MenuItem'
 
 type Props = {}
@@ -5,11 +6,21 @@ type Props = {}
 const Menu = (props: Props) => {
     return (
         <>
-            <MenuItem to="/">Announcements</MenuItem>
-            <MenuItem to="/about">About</MenuItem>
-            <MenuItem to="/Favorite">Favorite</MenuItem>
-            <MenuItem to="/shipping">Shipping</MenuItem>
-            <MenuItem to="/cart">Cart</MenuItem>
+            <Button>
+                <MenuItem to="/">Announcements</MenuItem>
+            </Button>
+            <Button>
+                <MenuItem to="/about">About</MenuItem>
+            </Button>
+            <Button>
+                <MenuItem to="/Favorite">Favorite</MenuItem>
+            </Button>
+            <Button>
+                <MenuItem to="/shipping">Shipping</MenuItem>
+            </Button>
+            <Button>
+                <MenuItem to="/cart">Cart</MenuItem>
+            </Button>
         </>
     )
 }

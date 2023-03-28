@@ -6,21 +6,24 @@ import { Container } from '@mui/system'
 import './Header.scss'
 import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
         <AppBar position="static" className="app-bar">
             <Container>
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                    >
-                        <Logo />
-                    </IconButton>
+                    <Link to="/" className="reset-logo">
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{ mr: 2 }}
+                        >
+                            <Logo />
+                        </IconButton>
+                    </Link>
                     <Container className="link-bar">
                         <Menu />
                         <CartHeader />
