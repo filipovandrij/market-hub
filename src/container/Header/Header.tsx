@@ -2,6 +2,7 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
+import StorefrontIcon from '@mui/icons-material/Storefront'
 import Logo from 'components/Logo/Logo'
 import { Container } from '@mui/system'
 import './Header.scss'
@@ -25,11 +26,12 @@ const Header = ({ productsInCart }: Props) => {
                         aria-label="menu"
                         sx={{ mr: 2 }}
                     >
-                        <MenuIcon />
+                        <Logo />
                     </IconButton>
-                    <Logo />
-                    <Menu />
-                    <CartHeader />
+                    <Container className="link-bar">
+                        <Menu />
+                        <CartHeader />
+                    </Container>
                 </Toolbar>
             </Container>
         </AppBar>
