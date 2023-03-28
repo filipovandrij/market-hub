@@ -15,29 +15,31 @@ const ProductsList = () => {
                     marginBottom: '40px',
                 }}
             >
-                Product List
+                Announcements
             </Typography>
 
-            <Grid container spacing={3}>
+            <Grid container spacing={12}>
                 {productsArray.map(
                     ({
                         id,
                         title,
                         description,
-                        type,
-                        capacity,
                         price,
                         image,
+                        category,
+                        stock,
+                        rating,
                     }) => (
                         <Grid item xs={12} sm={6} md={4} key={id}>
                             <ProductsListItem
                                 id={id}
                                 title={title}
                                 description={description}
-                                type={type}
-                                capacity={capacity}
                                 price={price}
                                 image={image}
+                                category={category}
+                                stock={stock}
+                                rating={rating}
                             />
                         </Grid>
                     )

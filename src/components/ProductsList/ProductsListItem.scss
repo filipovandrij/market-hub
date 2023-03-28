@@ -1,5 +1,12 @@
 .product {
-    padding: 20px 0;
+    border-radius: 10px;
+    width: 350px;
+    height: 550px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .product-title {
     font-size: 22px;

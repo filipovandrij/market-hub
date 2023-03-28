@@ -3,10 +3,11 @@ export type Product = {
     id: number
     title: string
     description: string
-    type: string
-    capacity: string
+    category: string
     price: number
     image: string
+    rating: number
+    stock: number
 }
 
 export const getProductsObject = (productsArray: Product[]) =>

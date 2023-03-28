@@ -9,6 +9,7 @@ import CartPage from 'pages/Cart/CartPage'
 import CheckoutPage from 'pages/Checkout/CheckoutPage'
 import { useAppDispatch } from 'redux/hooks'
 import { fetchProducts } from 'redux/productsreducer'
+import Favorite from 'pages/Favorite/Favorite'
 
 type Props = {}
 
@@ -32,6 +33,8 @@ const App = (props: Props) => {
                     <Route path="/" element={<Home />} />
                     <Route path="cart" element={<CartPage />} />
                     <Route path="checkout" element={<CheckoutPage />} />
+
+                    <Route path="favorite" element={<Favorite />} />
                 </Routes>
             </Container>
             <Footer />

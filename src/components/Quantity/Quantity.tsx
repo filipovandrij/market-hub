@@ -1,12 +1,19 @@
 import { Button, TextField } from '@mui/material'
 
 type Props = {
+    stock: any
     onDecrement: () => void
     onIncrement: () => void
     count: number
     minCount?: number
 }
-const Quantity = ({ onDecrement, onIncrement, count, minCount = 1 }: Props) => {
+const Quantity = ({
+    stock,
+    onDecrement,
+    onIncrement,
+    count,
+    minCount = 1,
+}: Props) => {
     return (
         <div className="product-quantity">
             <Button
@@ -20,7 +27,7 @@ const Quantity = ({ onDecrement, onIncrement, count, minCount = 1 }: Props) => {
             <Button
                 variant="outlined"
                 onClick={() => onIncrement()}
-                disabled={count >= 10}
+                disabled={count >= stock}
             >
                 +
             </Button>
