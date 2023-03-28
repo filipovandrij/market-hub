@@ -1,28 +1,37 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material'
-import StoreIcon from '@mui/icons-material/Store'
-import { Link } from 'react-router-dom'
-import Menu from '../../component/Menu/Menu'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from '@mui/icons-material/Menu'
+import Logo from 'components/Logo/Logo'
+import { Container } from '@mui/system'
 import './Header.scss'
+import Menu from 'components/Menu/Menu'
+import CartHeader from 'components/CartHeader/CartHeader'
 
-type Props = {}
-const Header = (props: Props) => {
+type Props = {
+    productsInCart: {
+        [id: number]: number
+    }
+}
+const Header = ({ productsInCart }: Props) => {
     return (
         <AppBar position="static" className="app-bar">
-            <Toolbar className="toolbar">
-                <Link className="main-link" to="/">
+            <Container>
+                <Toolbar>
                     <IconButton
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
+                        sx={{ mr: 2 }}
                     >
-                        <StoreIcon />
+                        <MenuIcon />
                     </IconButton>
-
-                    <Typography className="main-logo">Market Hub</Typography>
-                </Link>
-                <Menu />
-            </Toolbar>
+                    <Logo />
+                    <Menu />
+                    <CartHeader />
+                </Toolbar>
+            </Container>
         </AppBar>
     )
 }
