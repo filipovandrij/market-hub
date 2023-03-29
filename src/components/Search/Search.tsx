@@ -1,19 +1,28 @@
 import AsyncSelect from 'react-select/async'
 import './Search.scss'
 import { useAppSelector } from 'redux/hooks'
+import { useState } from 'react'
+import axios from 'axios'
 
 const MySelect = () => {
     const productsArray = useAppSelector((state) => state.products)
 
     const handleChange = (selectedOption: any) => {
-        console.log('handleChange', selectedOption)
+        return selectedOption
     }
 
     const loadOptions = (searchvalue: any, callback: any) => {
         setTimeout(() => {
-            const filterArray = productsArray.filter((option) =>
-                option.title.toLowerCase().includes(searchvalue.toLowerCase())
+            const filterArray = productsArray.filter(
+                (option) =>
+                    option.title
+                        .toLowerCase()
+                        .includes(searchvalue.toLowerCase()) ||
+                    option.category
+                        .toLowerCase()
+                        .includes(searchvalue.toLowerCase())
             )
+
             callback(filterArray)
         }, 1000)
     }
@@ -21,8 +30,9 @@ const MySelect = () => {
     return (
         <div className="main-search">
             <AsyncSelect
+                cacheOptions
+                defaultOptions
                 loadOptions={loadOptions}
-                options={productsArray}
                 onChange={handleChange}
             />
         </div>
