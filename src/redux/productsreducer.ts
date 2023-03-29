@@ -1,19 +1,11 @@
 
 
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { Product } from "utils/FunctionalAndType";
 
 
-type Product = {
-    id: number
-    title: string
-    description: string
-    category: string
-    price: number
-    image: string
-    rating: number
-    stock: number
-}
 
 const initialState:Product[] = []
 
@@ -25,8 +17,6 @@ export const fetchProducts = createAsyncThunk<Product[],undefined>(
         return response.data.products
     }
 )
-
-
 
 export const productsSlice = createSlice({
     name:'products',
@@ -40,6 +30,3 @@ export const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer
-
-
-
