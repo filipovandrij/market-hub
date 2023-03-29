@@ -4,6 +4,7 @@ import { useAppSelector } from 'redux/hooks'
 
 const ProductsList = () => {
     const productsArray = useAppSelector((state) => state.products)
+    console.log(productsArray)
 
     return (
         <>
