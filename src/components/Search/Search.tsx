@@ -17,7 +17,7 @@ const MySelect = () => {
     }, [])
 
     const handleChange = (selectedOption: any) => {
-        console.log(selectedOption)
+        return selectedOption
     }
 
     const loadOptions = (searchvalue: any, callback: any) => {
