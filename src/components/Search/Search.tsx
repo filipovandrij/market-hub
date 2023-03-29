@@ -1,14 +1,12 @@
 import AsyncSelect from 'react-select/async'
 import './Search.scss'
 import { useAppSelector } from 'redux/hooks'
-import { useState } from 'react'
-import axios from 'axios'
 
 const MySelect = () => {
     const productsArray = useAppSelector((state) => state.products)
 
     const handleChange = (selectedOption: any) => {
-        return selectedOption
+        return selectedOption.title
     }
 
     const loadOptions = (searchvalue: any, callback: any) => {
@@ -24,7 +22,7 @@ const MySelect = () => {
             )
 
             callback(filterArray)
-        }, 1000)
+        }, 2000)
     }
 
     return (
