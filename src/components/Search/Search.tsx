@@ -1,39 +1,43 @@
+import { useState, useEffect } from 'react'
 import AsyncSelect from 'react-select/async'
-import './Search.scss'
-import { useAppSelector } from 'redux/hooks'
+import axios from 'axios'
 
 const MySelect = () => {
-    const productsArray = useAppSelector((state) => state.products)
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        axios
+            .get('https://dummyjson.com/products')
+            .then((response) => {
+                setProducts(response.data.products)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }, [])
 
     const handleChange = (selectedOption: any) => {
-        return selectedOption.title
+        console.log(selectedOption)
     }
 
     const loadOptions = (searchvalue: any, callback: any) => {
         setTimeout(() => {
-            const filterArray = productsArray.filter(
-                (option) =>
-                    option.title
-                        .toLowerCase()
-                        .includes(searchvalue.toLowerCase()) ||
-                    option.category
-                        .toLowerCase()
-                        .includes(searchvalue.toLowerCase())
+            const filterArray = products.filter((product: any) =>
+                product.title.toLowerCase().includes(searchvalue.toLowerCase())
             )
 
             callback(filterArray)
-        }, 2000)
+        }, 1000)
     }
 
     return (
-        <div className="main-search">
-            <AsyncSelect
-                cacheOptions
-                defaultOptions
-                loadOptions={loadOptions}
-                onChange={handleChange}
-            />
-        </div>
+        <AsyncSelect
+            loadOptions={loadOptions}
+            defaultOptions
+            onChange={handleChange}
+            getOptionLabel={(option) => option.title}
+            getOptionValue={(option) => option.id}
+        />
     )
 }
 
