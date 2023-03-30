@@ -7,10 +7,18 @@ import Home from 'pages/Home/Home'
 import CartPage from 'pages/Cart/CartPage'
 import CheckoutPage from 'pages/Checkout/CheckoutPage'
 import Favorite from 'pages/Favorite/Favorite'
+import { useAppDispatch } from 'redux/hooks'
+import { useEffect } from 'react'
+import { fetchProducts } from 'redux/productsreducer'
 
 type Props = {}
 
 const App = (props: Props) => {
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        dispatch(fetchProducts())
+    })
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />

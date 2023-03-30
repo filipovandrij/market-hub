@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import AsyncSelect from 'react-select/async'
 import axios from 'axios'
+import './Search.scss'
 
 const MySelect = () => {
     const [products, setProducts] = useState([])
@@ -31,13 +32,15 @@ const MySelect = () => {
     }
 
     return (
-        <AsyncSelect
-            loadOptions={loadOptions}
-            defaultOptions
-            onChange={handleChange}
-            getOptionLabel={(option) => option.title}
-            getOptionValue={(option) => option.id}
-        />
+        <div className="container-search">
+            <AsyncSelect
+                loadOptions={loadOptions}
+                defaultOptions
+                onChange={handleChange}
+                getOptionLabel={(option) => option.title}
+                getOptionValue={(option) => option.id}
+            />
+        </div>
     )
 }
 

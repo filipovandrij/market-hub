@@ -1,7 +1,7 @@
 import './Menu.scss'
 import { Button, Container } from '@mui/material'
-import MySelect from 'components/Search/Search'
 import MenuItem from './MenuItem/MenuItem'
+import MySelect from 'components/Search/Search'
 
 type Props = {}
 
