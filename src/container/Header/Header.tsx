@@ -7,7 +7,6 @@ import './Header.scss'
 import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
 import { Link } from 'react-router-dom'
-import { useAppSelector } from 'redux/hooks'
 
 const Header = () => {
     return (

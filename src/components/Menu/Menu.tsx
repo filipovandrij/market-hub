@@ -15,13 +15,10 @@ const Menu = (props: Props) => {
                 </Button>
 
                 <Button>
-                    <MenuItem to="/Favorite">Favorite</MenuItem>
+                    <MenuItem to="/addNewProduct">Add product</MenuItem>
                 </Button>
                 <Button>
-                    <MenuItem to="/shipping">Shipping</MenuItem>
-                </Button>
-                <Button>
-                    <MenuItem to="/cart">Cart</MenuItem>
+                    <MenuItem to="/cart">Basket</MenuItem>
                 </Button>
             </Container>
         </>

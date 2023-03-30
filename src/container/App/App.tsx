@@ -6,9 +6,9 @@ import { Route, Routes } from 'react-router-dom'
 import Home from 'pages/Home/Home'
 import CartPage from 'pages/Cart/CartPage'
 import CheckoutPage from 'pages/Checkout/CheckoutPage'
-import Favorite from 'pages/Favorite/Favorite'
+import AddNewProduct from 'pages/AddNewProduct/AddNewProduct'
 import { useAppDispatch } from 'redux/hooks'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchProducts } from 'redux/productsreducer'
 
 type Props = {}
@@ -19,6 +19,7 @@ const App = (props: Props) => {
     useEffect(() => {
         dispatch(fetchProducts())
     })
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
@@ -33,7 +34,7 @@ const App = (props: Props) => {
                     <Route path="cart" element={<CartPage />} />
                     <Route path="checkout" element={<CheckoutPage />} />
 
-                    <Route path="favorite" element={<Favorite />} />
+                    <Route path="addNewProduct" element={<AddNewProduct />} />
                 </Routes>
             </Container>
             <Footer />
