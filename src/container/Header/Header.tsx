@@ -7,8 +7,12 @@ import './Header.scss'
 import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
 import { Link } from 'react-router-dom'
-
-const Header = () => {
+type Props = {
+    query: string
+    handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+    handleSearch: () => void
+}
+const Header = ({ query, handleInputChange, handleSearch }: Props) => {
     return (
         <AppBar position="static" className="app-bar">
             <Container>
@@ -25,7 +29,11 @@ const Header = () => {
                         </IconButton>
                     </Link>
                     <Container className="link-bar">
-                        <Menu />
+                        <Menu
+                            query={query}
+                            handleInputChange={handleInputChange}
+                            handleSearch={handleSearch}
+                        />
                         <CartHeader />
                     </Container>
                 </Toolbar>

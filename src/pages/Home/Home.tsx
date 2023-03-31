@@ -1,6 +1,8 @@
 import ProductsList from 'components/ProductsList/ProductsList'
 
-const Home = () => {
+type Props = {}
+
+const Home = (props: Props) => {
     return (
         <div>
             <ProductsList />
