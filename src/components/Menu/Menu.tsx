@@ -1,7 +1,7 @@
 import './Menu.scss'
 import { Button, Container } from '@mui/material'
 import MenuItem from './MenuItem/MenuItem'
-import MySelect from 'components/Search/Search'
+import HeaderSearch from 'components/Search/HeaderSearch'
 
 type Props = {}
 
@@ -9,7 +9,7 @@ const Menu = (props: Props) => {
     return (
         <>
             <Container className="menu-container">
-                <MySelect />
+                <HeaderSearch />
                 <Button>
                     <MenuItem to="/">Announcements</MenuItem>
                 </Button>
