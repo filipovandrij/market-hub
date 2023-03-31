@@ -17,9 +17,6 @@ const HeaderSearch = ({ query, handleInputChange, handleSearch }: Props) => {
                     onChange={handleInputChange}
                     placeholder="Search product "
                 />
-                <button className="search-button" onClick={handleSearch}>
-                    Search
-                </button>
             </div>{' '}
         </>
     )
